@@ -74,4 +74,5 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 
  1. Use any / all of the other API Endpoints to demonstrate your knowledge of React / Redux
  2. Style the project using: Styles in your components, a Stylesheet, or using the Styled Components Library [Styled Components](https://github.com/styled-components/styled-components)
- 3. Make your entire site responsive so it looks good on: a large screen, a tablet, and a phone
+ 3. Implement live search on all of your components that show lists of items like Beers, Breweries, Etc
+ 4. Make your entire site responsive so it looks good on: a large screen, a tablet, and a phone
