@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::API
+  before_action :set_page
+
   protected
   def send_response(api_response)
     if api_response.is_a?(BreweryDB::PaginatedCollection) || api_response.is_a?(BreweryDB::Collection)
@@ -28,5 +30,9 @@ class ApplicationController < ActionController::API
       config.logger = Rails.logger
       config.api_key = ENV['BREWERYDB_API_KEY']
     end
+  end
+
+  def set_page
+    @page = params[:page] || 1
   end
 end
