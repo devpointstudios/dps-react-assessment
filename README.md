@@ -5,7 +5,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 ## Assessment Guidelines:
 
 * The purpose of this assessment is to help us evaluate your client side application development coding skills.
-* We use Semantic UI React (https://react.semantic-ui.com/introduction) in our projects. The skeleton project that you will be working from has this library already included. We don't care what frontend library you use.
+* We use [Semantic UI React](https://react.semantic-ui.com/introduction) in our projects. The skeleton project that you will be working from has this library already included. We don't care what frontend library you use.
 * You are allowed to use any non-human resource. Ex:
   * **Allowed:** StackOverflow, Google, Old Code, Etc...
   * **Not Allowed:** Speaking with anyone that has coding knowledge or is in the Technology field.
