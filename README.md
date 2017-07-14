@@ -60,7 +60,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 ### PART II - Controlled Data Fetching (This is an important step, please don't skip it)
 
  1. Paginate the list of Beers and Breweries, loading no more than 10 at a time. Do server-side pagination (NOT client-side): [Will Paginate Gem](https://github.com/mislav/will_paginate).
-    * HINT: you can pass pagination details in the query string. If you pass the `page` and `per_page` query string parameters the server will paginate results for you.
+    * HINT: you can pass pagination details in the query string. If you pass the `page` and `per_page` query string parameters the server will paginate results for you. EXAMPLE: `api/all_beers?page=20&per_page=5`
  2. Have the ability to go to other pages via pagination links or Infinite Scroll
    * Example Libraries
      1. [React Infinite Scroller](https://github.com/CassetteRocks/react-infinite-scroller)
