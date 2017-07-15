@@ -15,7 +15,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 * Put the time that you start and end on the first line of notes.md. Also, add any grading advice, disclaimers, brags, feedback, or anomalies you encounter along your way.
 * This is a git repo. Please try to commit often and add messages to your commits so we can more easily review your work.
 * We added more steps than we expect you to finish. Don't be overwhelmed and get as far as you can in the time you have. We will take into account the time amount of time you took, the amount of experience you have in ReactJS, etc.
-* **The Webpack server and API server for the project can be run via `foreman start`**.
+* **The Webpack server and API server for the project can be run via `bundle exec foreman start`**.
 * IMPORTANT: You will need to create a .env file in the root directory of the project. The easiest way to do this is to run this command in your terminal: `cp .env.example .env`
 * IMPORTANT: You will need to obtain an API key for the BreweryDB API from us at DevPoint Labs. Please reach out to us and let us know when you are ready to start the project.
 
