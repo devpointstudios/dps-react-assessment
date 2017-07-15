@@ -1,4 +1,4 @@
-# DevPoint Studios - ReactJS Interview
+# DevPoint Studios - React Assessment
 
 We welcome you and thank you for taking the time to do this coding assessment. Please read the guidelines before getting started.
 
