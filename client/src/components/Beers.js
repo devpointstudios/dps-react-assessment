@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Segment, Card, Grid, Divider, Dimmer, Loader } from 'semantic-ui-react';
+import { Segment, Card, Grid, Divider, Dimmer, Loader, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Scroll from './Scroll';
 import Pagination from './Pagination';
@@ -28,6 +28,14 @@ class Beers extends React.Component {
     });
   }
 
+  randomBeer = () => {
+    this.setState({ loading: true })
+    axios.get('/api/random_beer')
+      .then( res => {
+        this.props.history.push(`/beers/${encodeURIComponent(res.data.name)}`) 
+      })
+  }
+
   render() {
     let { beers, loading } = this.state;
     return (
@@ -40,6 +48,14 @@ class Beers extends React.Component {
             </Dimmer>
           </Segment> :
           <Grid>
+            <Button 
+              basic 
+              fluid 
+              color="green"
+              onClick={this.randomBeer}
+            >
+              Random Beer?
+            </Button>
             <Grid.Row>
             { beers.entries.map( beer => { 
                 let { 
@@ -68,7 +84,7 @@ class Beers extends React.Component {
                         </Card.Meta>
                       </Card.Content>
                       <Card.Content extra>
-                        <Link to={`/beers/${name}`}>More Info</Link>
+                        <Link to={`/beers/${encodeURIComponent(name)}`}>More Info</Link>
                       </Card.Content>
                     </StyledCard>
                     <Divider hidden />

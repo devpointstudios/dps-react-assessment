@@ -7,8 +7,8 @@ import { fixKey } from '../utils/nameHelpers';
 class Beer extends React.Component {
   state = { 
     beer: { 
-      style: { category: {} }, 
-      glass: {} 
+      style: { category: { name: '' } }, 
+      glass: { name: '' } 
     } 
   }
 
@@ -33,7 +33,7 @@ class Beer extends React.Component {
     let { 
       abv,
       description,
-      glass: { name: glassType },
+      glass: { name: glassType } = {},
       is_organic,
       name, 
       status_display,
