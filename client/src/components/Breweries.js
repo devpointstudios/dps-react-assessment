@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { Segment, Image, Card, Grid, Header, Divider } from 'semantic-ui-react';
+import { Segment, Image, Card, Grid, Header, Divider, Dimmer, Loader } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Scroll from './Scroll';
+import Pagination from './Pagination';
 
 const StyledCard = styled(Card)`
   height: 500px !important;
@@ -10,53 +11,71 @@ const StyledCard = styled(Card)`
 `
 
 class Breweries extends React.Component {
-  state = { breweries: { entries: [] }}
+  state = { breweries: { entries: [], total_pages: 0, pages: 1 }, loading: false }
 
   componentDidMount() {
-    axios.get('/api/all_breweries')
-      .then( res => this.setState({ breweries: res.data }) )
+    this.getBreweries(1);
+  }
+
+  getBreweries = (page) => {
+    axios.get(`/api/all_breweries?per_page=10&page=${page}`)
+      .then( res => this.setState({ breweries: res.data, loading: false }) )
+  }
+
+  handlePageClick = (page) => {
+    this.setState({ loading: true }, () => {
+      this.getBreweries(page)
+    });
   }
 
   render() {
-    let { breweries } = this.state;
+    let { breweries, loading } = this.state;
     return (
       <Segment>
-        <Grid>
-          <Header as="h2" textAlign="center">Breweries</Header>
-          <Grid.Row>
-            { breweries.entries.map( brew => { 
-                let { id, name, description, images = {}, website } = brew;
-                return (
-                  <Grid.Column computer={8} key={id}>
-                    <StyledCard>
-                      <Divider hidden />
-                      <Image src={images.large} />
-                      <Divider hidden />
-                      <Card.Content>
-                        <Card.Header>
-                          { name }
-                        </Card.Header>
-                        <Card.Meta>
-                          <Scroll height="100px">
-                            { description || 'No Description' }
-                          </Scroll>
+        <Pagination paginate={this.handlePageClick} numPages={breweries.total_pages} />
+        { loading ?
+          <Segment>
+            <Dimmer active>
+              <Loader />
+            </Dimmer>
+          </Segment> :
+          <Grid>
+            <Header as="h2" textAlign="center">Breweries</Header>
+            <Grid.Row>
+              { breweries.entries.map( brew => { 
+                  let { id, name, description, images = {}, website } = brew;
+                  return (
+                    <Grid.Column computer={8} tablet={16} mobile={16} key={id}>
+                      <StyledCard>
+                        <Divider hidden />
+                        <Image src={images.large} />
+                        <Divider hidden />
+                        <Card.Content>
+                          <Card.Header>
+                            { name }
+                          </Card.Header>
+                          <Card.Meta>
+                            <Scroll height="100px">
+                              { description || 'No Description' }
+                            </Scroll>
 
-                        </Card.Meta>
-                      </Card.Content>
-                      <Card.Content extra>
-                        { website ?
-                          <a href={website} target="_blank" rel="noopener noreferrer">Website</a> :
-                          <span>No Website Listed</span>
-                        }
-                      </Card.Content>
-                    </StyledCard>
-                    <Divider hidden />
-                  </Grid.Column>
-                )
-              })
-            }
-          </Grid.Row>
-        </Grid>
+                          </Card.Meta>
+                        </Card.Content>
+                        <Card.Content extra>
+                          { website ?
+                            <a href={website} target="_blank" rel="noopener noreferrer">Website</a> :
+                            <span>No Website Listed</span>
+                          }
+                        </Card.Content>
+                      </StyledCard>
+                      <Divider hidden />
+                    </Grid.Column>
+                  )
+                })
+              }
+            </Grid.Row>
+          </Grid>
+        }
       </Segment>
     )
   }

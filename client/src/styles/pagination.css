@@ -1,0 +1,27 @@
+.pagination {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pagination li {
+  float: left;
+  text-align: center;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+
+.disabled {
+ cursor: none;
+ color: grey;
+} 
+
+.break a {
+  cursor: default;
+}
+
+.active-page a {
+  cursor: default !important;
+  color: grey !important;
+}

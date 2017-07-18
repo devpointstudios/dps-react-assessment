@@ -14,4 +14,5 @@ class Api::BeersController < ApplicationController
   def random
     send_response(brew_client.beers.random(p: @page))
   end
+
 end

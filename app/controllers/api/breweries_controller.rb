@@ -1,4 +1,5 @@
 class Api::BreweriesController < ApplicationController
+  before_action :set_page
   # brewery_db.breweries.all(established: 2006)
   # brewery_db.breweries.find('d1zSa7')
   # brewery_db.brewery('d1zSa7').beers
