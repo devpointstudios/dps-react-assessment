@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { Segment, Image, Card, Grid, Header, Divider, Dimmer, Loader } from 'semantic-ui-react';
+import { Segment, Image, Card, Grid, Header, Divider, Dimmer, Loader, Button } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Scroll from './Scroll';
 import Pagination from './Pagination';
+import { Link } from 'react-router-dom';
 
 const StyledCard = styled(Card)`
   height: 500px !important;
@@ -62,10 +63,17 @@ class Breweries extends React.Component {
                           </Card.Meta>
                         </Card.Content>
                         <Card.Content extra>
-                          { website ?
-                            <a href={website} target="_blank" rel="noopener noreferrer">Website</a> :
-                            <span>No Website Listed</span>
-                          }
+                          <div className="ui two buttons">
+                            <Button basic>
+                              { website ?
+                                <a href={website} target="_blank" rel="noopener noreferrer">Website</a> :
+                                <span>No Website Listed</span>
+                              }
+                            </Button>
+                            <Button basic>
+                              <Link to={`/breweries/${encodeURIComponent(name)}`}>More Info</Link>
+                            </Button>
+                          </div>
                         </Card.Content>
                       </StyledCard>
                       <Divider hidden />

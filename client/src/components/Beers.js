@@ -4,6 +4,7 @@ import { Segment, Card, Grid, Divider, Dimmer, Loader } from 'semantic-ui-react'
 import styled from 'styled-components';
 import Scroll from './Scroll';
 import Pagination from './Pagination';
+import { Link } from 'react-router-dom';
 
 const StyledCard = styled(Card)`
   height: 500px !important;
@@ -65,6 +66,9 @@ class Beers extends React.Component {
                           <Divider />
                           Category: {catName}
                         </Card.Meta>
+                      </Card.Content>
+                      <Card.Content extra>
+                        <Link to={`/beers/${name}`}>More Info</Link>
                       </Card.Content>
                     </StyledCard>
                     <Divider hidden />
