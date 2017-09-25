@@ -76,3 +76,4 @@ We welcome you and thank you for taking the time to do this coding assessment. P
  2. Style the project using: Styles in your components, a Stylesheet, or using the Styled Components Library [Styled Components](https://github.com/styled-components/styled-components)
  3. Implement live search on all of your components that show lists of items like Beers, Breweries, Etc
  4. Make your entire site responsive so it looks good on: a large screen, a tablet, and a phone
+ 5. React Native App
