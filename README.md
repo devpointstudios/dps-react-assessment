@@ -13,7 +13,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 * Check out the API index at [http://localhost:3001/rails/info](http://localhost:3001/rails/info).
 * Don't be overwhelmed, supposed to be more steps than you are likely to complete in your given time frame. Try to do them in order, but you can skip steps if you get stuck. If you skip a feature, put in the notes as to why you skipped it.
 * Put the time that you start and end on the first line of notes.md. Also, add any grading advice, disclaimers, brags, feedback, or anomalies you encounter along your way.
-* This is a git repo. Please try to commit often and add messages to your commits so we can more easily review your work.
+* Please try to commit often and add messages to your commits so we can more easily review your work.
 * We added more steps than we expect you to finish. Don't be overwhelmed and get as far as you can in the time you have. We will take into account the time amount of time you took, the amount of experience you have in ReactJS, etc.
 * **The Webpack server and API server for the project can be run via `bundle exec foreman start`**.
 * IMPORTANT: You will need to create a .env file in the root directory of the project. The easiest way to do this is to run this command in your terminal: `cp .env.example .env`
@@ -51,7 +51,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 
 ### PART I - Basic Data Retrieval
 
- 1. Fork this repo so you have a clone of the project in your own github - https://github.com/devpointstudios/dps-react-assessment/edit/master/README.md#fork-destination-box
+ 1. Fork this repo so you have a clone of the project in your own github
  2. Create a new Beers Component - `client/src/components`
  2. Add a new client side route - `/beers` that renders our new Beers Component. Our routes are defined in `client/src/components/App.js`.
  3. Use `axios`, `fetch` or any other HTTP Request library to GET the first 50 Beers from `/api/all_beers`. The way you choose to display / style this is up to you.
@@ -60,7 +60,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 
 ### PART II - Controlled Data Fetching (This is an important step, please don't skip it)
 
- 1. Paginate the list of Beers and Breweries, loading no more than 10 at a time. Do server-side pagination (NOT client-side): [Will Paginate Gem](https://github.com/mislav/will_paginate).
+ 1. Paginate the list of Beers and Breweries, loading no more than 10 at a time. Do server-side pagination (NOT client-side): [Will Paginate Gem](https://github.com/mislav/will_paginate). This is already setup on the server all you have to do is make sure your client side API requests are passing the correct query strings for the rails server to do the pagination
     * HINT: you can pass pagination details in the query string. If you pass the `page` and `per_page` query string parameters the server will paginate results for you. EXAMPLE: `api/all_beers?page=20&per_page=5`
  2. Have the ability to go to other pages via pagination links or Infinite Scroll
    * Example Libraries
