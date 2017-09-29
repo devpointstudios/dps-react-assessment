@@ -18,6 +18,7 @@ We welcome you and thank you for taking the time to do this coding assessment. P
 * **The Webpack server and API server for the project can be run via `bundle exec foreman start`**.
 * IMPORTANT: You will need to create a .env file in the root directory of the project. The easiest way to do this is to run this command in your terminal: `cp .env.example .env`
 * IMPORTANT: You will need to obtain an API key for the BreweryDB API from us at DevPoint Labs. Please reach out to us and let us know when you are ready to start the project.
+* HINT: Postman is an awesome tool to start making API Requests with to see what data comes back and how you'll want to manage that data in your React Components.
 
 ## Api Endpoints
 
